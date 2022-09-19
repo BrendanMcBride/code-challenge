@@ -17,7 +17,7 @@ export const Starships = () => {
     const tempManufacturers = [];
     starships.data.forEach((starship) => {
       starship.manufacturer.split(",").forEach((starshipManufacturer) => {
-        tempManufacturers.push(starshipManufacturer);
+        tempManufacturers.push(starshipManufacturer.trim());
       });
     });
 

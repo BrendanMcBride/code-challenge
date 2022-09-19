@@ -19,7 +19,7 @@ export const WookieeStarships = () => {
       starship.scrawhhuwwraoaaohurcworc
         .split(",")
         .forEach((starshipManufacturer) => {
-          tempManufacturers.push(starshipManufacturer);
+          tempManufacturers.push(starshipManufacturer.trim());
         });
     });
 
