@@ -1,13 +1,13 @@
 import { Card, CircularProgress, Autocomplete, TextField } from "@mui/material";
-import { getStarships } from "../Utility/SWAPIService";
+import { getWookieeStarships } from "../Utility/SWAPIService";
 import { useQuery } from "@tanstack/react-query";
-import BasicTable from "../Components/BasicTable";
+import WookieeBasicTable from "../Components/WookieeBasicTable";
 import { useMemo, useState } from "react";
 import { Box } from "@mui/system";
 
-export const Starships = () => {
+export const WookieeStarships = () => {
   const [selectedManufacturer, setSelectedManufacturer] = useState(null);
-  const starships = useQuery(["getStarships"], getStarships);
+  const starships = useQuery(["getWookieeStarships"], getWookieeStarships);
 
   const manufacturers = useMemo(() => {
     if ((starships?.data ?? null) == null) {
@@ -16,9 +16,11 @@ export const Starships = () => {
 
     const tempManufacturers = [];
     starships.data.forEach((starship) => {
-      starship.manufacturer.split(",").forEach((starshipManufacturer) => {
-        tempManufacturers.push(starshipManufacturer);
-      });
+      starship.scrawhhuwwraoaaohurcworc
+        .split(",")
+        .forEach((starshipManufacturer) => {
+          tempManufacturers.push(starshipManufacturer);
+        });
     });
 
     return [...new Set(tempManufacturers)];
@@ -53,13 +55,13 @@ export const Starships = () => {
           renderInput={(params) => (
             <TextField
               {...params}
-              label="Filter Manufacturer"
+              label="Scrawhhuwwraoaaohurcworc"
               variant="standard"
             />
           )}
           sx={{ padding: 2 }}
         />
-        <BasicTable
+        <WookieeBasicTable
           rows={starships.data}
           manufacturerFilter={selectedManufacturer}
         />

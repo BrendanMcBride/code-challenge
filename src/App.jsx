@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Layout } from "./Layout";
 import { Starships } from "./Pages/Starships";
+import { WookieeStarships } from "./Pages/WookieeStarships";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,6 +22,7 @@ export const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Starships />} />
             <Route path="starships" element={<Starships />} />
+            <Route path="wookiee" element={<WookieeStarships />} />
             <Route path="*" exact={true} element={<Starships />} />
           </Route>
         </Routes>
